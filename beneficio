@@ -1,0 +1,43 @@
+<table style="width: 100%; max-width: 100%;" ng-if="pendencias.length > 0">
+    <tbody>
+      <tr ng-repeat="request in pendencias track by $index" ng-if="pendencias.length > 0">
+        <td class="panel-body" colspan="2" style="padding: 5px;">
+          <table style="width: 75%; max-width: 75%; height: 100px">
+            <tr class="panel panel-default panel-border panel-{{request.color}} no-padding">
+              <td class="panel-body">
+                <div class="row" ng-click="toggleCampos($index, $event)">
+                  <div class="col-xs-12 col-sm-8">
+                    <h4><b>{{request.tipoBeneficio}}</b></h4>
+                    <h5 style="text-align=center;">{{request.nomeBeneficio}}</h5>
+                  </div>
+                  <div class="col-xs-12 col-sm-4">
+                    <h4><b>Pontos</b></h4>
+                    <h5 style="text-align=center;">{{request.pontoBeneficio}}</h5>
+                  </div>
+                </div>
+
+                <div ng-show="request.mostrarCampos">
+                  <div class="row">
+
+                    <!--<div class="col-xs-12 col-sm-4">
+                      <label for="tipoDespesa_{{$index}}" class="obrigatorio" ng-class="{ 'preenchido': pendencias[$index].tipoDespesa }">Tipo de Despesa:</label>
+                      <select id="tipoDespesa_{{$index}}" ng-model="pendencias[$index].tipoDespesa" ng-init="pendencias[$index].tipoDespesa = request.tipo_despesa" ng-change="preenchido(pendencias[$index]);" class="sn-select-basic">
+                        <option ng-repeat="opcao in opcoesTipoDespesa" value="{{opcao.descricao + '|' + opcao.valor}}">{{opcao.descricao}}</option>
+                      </select>
+                    </div>-->
+
+                    <div class="col-xs-12 col-sm-12">
+                      <br/>
+                      <p>No caso de colaboradores que possuem dependente a pontuação será disponibilizada conforme a politica de custo empresa.</p>
+                    </div>  
+
+                  </div>
+                </div>
+
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
